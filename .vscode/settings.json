@@ -1,0 +1,18 @@
+{
+  "files.associations": {
+    "*.ejs": "html",
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    ".prettierrc": "json",
+    "*.tsx": "typescriptreact",
+    "*.module": "php",
+    "*.css": "css",
+    "css": "css",
+    "iostream": "cpp",
+    "iosfwd": "cpp",
+    "stdexcept": "cpp",
+    "fstream": "cpp"
+  },
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0, AllowShortIfStatementsOnASingleLine: false, IndentCaseLabels: false }",
+  "editor.formatOnSave": true
+}
