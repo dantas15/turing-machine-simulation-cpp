@@ -128,8 +128,10 @@ void readTuringMachineDescription(TuringMachine& tm) {
     input = input.substr(0, input.rfind('}'));
 
     std::istringstream finalStatesStream(input);
-    
+
     while (std::getline(finalStatesStream, aux, ',')) {
         tm.finalStates.push_back(aux);
     }
+
+    inputFile.close();
 }
