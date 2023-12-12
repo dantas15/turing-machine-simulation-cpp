@@ -1,0 +1,11 @@
+{q0}BaabB
+B{q1}aabB
+BX{q2}abB
+BXa{q2}bB
+BX{q3}aYB
+B{q3}XaYB
+BX{q1}aYB
+BXX{q2}YB
+BXXY{q2}B
+BXXYY
+BXXYY

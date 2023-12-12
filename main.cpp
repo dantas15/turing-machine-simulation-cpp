@@ -42,16 +42,58 @@ int main() {
 
         std::ofstream outputFile(outputFileName);
 
-        outputFile << word;
-
-        // std::cout << "\n\"" << word << "\"\n";
-        // std::cout << "\n\"" << outputFileName << "\"\n";
-
         // indice
         // estado atual
-        
-        outputFile.close();
-    } catch (std::exception &e) {
+
+        // Creating the tape
+        word = 'B' + word + 'B';
+
+        size_t tapeIndex = 0;
+        std::string currState = tm.initialState;
+
+        size_t i = 0;
+
+        char oi = '1';
+        while (true) {
+            for (size_t i = 0; i < word.size(); i++) {
+                if ((size_t)tapeIndex == i) {
+                    std::cout << "{" << currState << "}";
+                    outputFile << "{" << currState << "}";
+                }
+                outputFile << word[i];
+            }
+            outputFile << std::endl;
+
+            for (i = 0; i < tm.finalStates.size(); i++) {
+                if (tm.finalStates[i] == currState) {
+                    outputFile << "aceita\n";
+                    return 0;
+                }
+            }
+
+            char currLetter = word[tapeIndex];
+
+            transition nextTransition;
+
+            for(i = 0; i < tm.transitions.size(); i++) {
+                if ((tm.transitions.at(i).fromState == currState) && (currLetter == tm.transitions.at(i).readSymbol)) {
+                    nextTransition = tm.transitions.at(i);
+                }
+            }
+
+            currState = nextTransition.toState;
+            word[tapeIndex] = nextTransition.writeSymbol;
+
+            if (nextTransition.moveDirection == RIGHT_DIRECTION) {
+                tapeIndex++;
+            } else if (nextTransition.moveDirection == LEFT_DIRECTION) {
+                tapeIndex--;
+            }
+
+            std::cin >> oi;
+        }
+
+    } catch (std::exception& e) {
         std::cout << std::endl
                   << e.what() << std::endl;
     }

@@ -19,3 +19,11 @@ struct TuringMachine {
     std::string initialState;
     std::vector<std::string> finalStates;
 };
+
+void copyTransition(const transition& src, transition& dest) {
+    dest.fromState = src.fromState;
+    dest.readSymbol = src.readSymbol;
+    dest.toState = src.toState;
+    dest.writeSymbol = src.writeSymbol;
+    dest.moveDirection = src.moveDirection;
+}

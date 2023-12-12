@@ -5,7 +5,7 @@
 
 - A entrada é uma 5-tupla `(`
   - `Q` é um conjunto finito e não vazio de estados (`{ q0, q1, q[0-9] }`)
-  - `Σ` é o conjunto de símbolos de entrada, ou seja, o conjunto de símbolos permitidos para aparecer no conteúdo inicial da fita (`{a, b, [a-z]...}`)
+  - `Σ` é o alfabeto, conjunto de símbolos de entrada, ou seja, o conjunto de símbolos permitidos para aparecer no conteúdo inicial da fita (`{a, b, [a-z]...}`)
   - `Γ` é um conjunto finito e não vazio de símbolos do alfabeto da fita (`{B, [A-Z]...}`);
   - `δ` é o conjunto de transições:
     - exemplo: `{(q1, A) -> (q2, b, D)}`
